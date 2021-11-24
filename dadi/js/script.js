@@ -2,6 +2,7 @@ const input = document.getElementById('userName');
 const button = document.getElementById('btn-start');
 const playerScore = document.querySelector('.playerscore');
 const ComputerScore = document.querySelector('.computerscore');
+const result = document.querySelector('.result');
 
 let counter = 0;
 let scorePlayer = 0;
@@ -21,10 +22,12 @@ function(){
     // Stabilire il vincitore, in base a chi fa il punteggio più alto.
     if (dadoPlayer > dadoComputer) {
         scorePlayer++;
+        result.innerHTML = `${userName} Vince`;
     } else if (dadoPlayer == dadoComputer) {
-        console.log('Pareggio')
+        result.innerHTML = `Pareggio`;
     } else {
         scoreComputer++;
+        result.innerHTML = `Computer Vince`
     }
     
     const playerText = `Round ${counter}: ${dadoPlayer}`;
